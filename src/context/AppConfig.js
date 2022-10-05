@@ -179,6 +179,8 @@ export const AppProvider = ({ children }) => {
 
     return (
         <AppConfig.Provider
-          value={{signin,data,deposit,withdrawn,depositfund}}>{children}</AppConfig.Provider>
+          value={{signin,participants,starfund,
+            luckfund,topfund, royaltyfund,royalstarfund,dtop,
+            data,deposit,withdrawn,depositfund}}>{children}</AppConfig.Provider>
     )
 }
