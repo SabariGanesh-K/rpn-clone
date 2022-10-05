@@ -3,6 +3,7 @@ import React from 'react'
 export const Withdraw = () => {
   return (
     <div className='bg-black text-blue-500 text-center h-screen'>
+               <div className='mb-5 text-center text-white font-bold text-3xl'>WITHDRAW</div>
         <div className='flex flex-row justify-center mb-1'>
         <div>Unlock Investment</div>
 <div className='mr-3'>:-</div>

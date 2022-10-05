@@ -31,7 +31,7 @@ const MobileHeader = () =>{
         {togglemenu && (
             <div className='mobileheadercontainer'>
                 {/* <ScrollAnimation animateIn="animate__fadeIn" animateOnce={true}> */}
-                <NavLink className = "no-link" to = "/home" > <button  onClick={toggle}  className='mobileheaderitem'  style = {{fontSize:'3.5rem'}} >Dashboard</button></NavLink>
+                <NavLink className = "no-link" to = "/home" > <button  onClick={toggle}  className='mobileheaderitem'  style = {{fontSize:'+3.5rem'}} >Dashboard</button></NavLink>
                 {/* </ScrollAnimation> */}
                 {/* <ScrollAnimation animateIn="animate__fadeIn" animateOnce={true}> */}
                 <NavLink className = "no-link" to = "/team" > <button  onClick={toggle}  className='mobileheaderitem'  style = {{fontSize:'3.5rem'}}  > Team</button></NavLink>

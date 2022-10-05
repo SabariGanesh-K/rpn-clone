@@ -9,6 +9,7 @@ import { ethers } from 'ethers'
 import Web3Modal from "web3modal"
 import { CONTRACTADDRESS, CONTRACTABI } from '../contract'
 import './styles.css'
+import { NavLink } from 'react-router-dom';
 
 
 function ButtonSection() {
@@ -111,29 +112,38 @@ function ButtonSection() {
         <Container className="button-section">
             <Row className='button-row'>
                 <Col>
-                    <Button variant="outline-light" onClick={deposit} className='button'>
+                <NavLink to = "/deposit">
+                    <Button variant="outline-light" className='button'>
                         <FaArrowUp className='icon-button' /> <br></br>
                         DEPOSIT
                     </Button>
+                    </NavLink>
                 </Col>
-                <Col><Button variant="outline-light" onClick={withdrawn} className='button'>
+                <Col>
+                <NavLink to = "/withdraw">
+                <Button variant="outline-light"  className='button'>
                     <FaArrowDown className='icon-button' /> <br></br>
                     WITHDRAW
                 </Button>
+                </NavLink>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Button variant="outline-light" onClick={depositfund} className='button'>
+                <NavLink to = "/DepositDev">
+                    <Button variant="outline-light"  className='button'>
                         <FaArrowsAltH className='icon-button' /> <br></br>
                         DEPOSIT FUND
                     </Button>
+                    </NavLink>
                 </Col>
                 <Col>
-                    <Button variant="outline-light" onClick={reservefund} className='button'>
+                <NavLink to = "/reservefund">
+                    <Button variant="outline-light"  className='button'>
                         <FaArrowsAlt className='icon-button' /> <br></br>
                         RESERVE FUND
                     </Button>
+                    </NavLink>
                 </Col>
             </Row>
         </Container>

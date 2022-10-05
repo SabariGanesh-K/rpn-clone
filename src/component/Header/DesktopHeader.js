@@ -31,7 +31,7 @@
             <button  className =  "buttons-selected " style = {{padding:'0rem',  color: 'goldenrod'}}    >  My Team performance </button>
             </NavLink>
         
-            <NavLink className = "nav-link" to = "/depositdetails">
+            <NavLink className = "nav-link" to = "/deposithistory">
             <button  className = "buttons-selected " style = {{padding:'0rem',  color: 'goldenrod'}}   >  Deposit Details  </button>
             </NavLink>
   

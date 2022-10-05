@@ -17,10 +17,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <AppProvider>
-      {/* <Main/> */}
+      <Main/>
       {/* <DepositDevelop/> */}
       {/* <Withdraw/> */}
-      <Reservefund/>
+      {/* <Reservefund/> */}
       </AppProvider>
       </BrowserRouter>
 

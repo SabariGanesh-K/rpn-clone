@@ -12,6 +12,7 @@ export const Deposit = () => {
 
   return (
     <div className="bg-black h-screen">
+             <div className='mb-5 text-center text-white font-bold text-3xl'>DEPOSIT </div>
       <div className="flex flex-row justify-around bg-black">
         <div>
           <input

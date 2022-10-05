@@ -16,6 +16,7 @@ export const DepositDevelop = () => {
 
   return (
     <div className="bg-black text-white h-screen">
+             <div className='mb-5 text-center text-white font-bold text-3xl'>DEPOSIT DEVLOPMENT</div>
       <div className="flex flex-row justify-around bg-black">
         <div>
           <input
