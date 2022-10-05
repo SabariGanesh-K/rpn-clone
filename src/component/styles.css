@@ -1,0 +1,118 @@
+.body {
+    font-family: "Poppins", sans-serif;
+}
+
+.top-section-hero {
+    background: #222945;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    height: 50px;
+}
+
+.top-section-text {
+    font-weight: 800;
+    text-align: right;
+}
+
+.contract-section {
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    background: #222945;
+    color: white;
+    height: 50px;
+    text-align: center;
+}
+
+.smart-contr-label {
+    font-weight: 900;
+    font-size: medium;
+}
+
+
+.participant-section {
+    background: #222945;
+
+}
+
+.participant-col {
+    height: 150px;
+    background: #222945;
+    border: 2px solid #fca223;
+    color: white;
+    font-weight: 900;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.time {
+    height: 50px;
+    width: 70px;
+    background-color: #fca223;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.people-clock {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.number {
+    font-size: 18px;
+}
+
+.people-section {
+    margin-top: -10px;
+}
+
+.button-section {
+    background: #222945;
+    height: 350px;
+    padding: 10px;
+    text-align: center;
+}
+
+.button-row {
+    margin-bottom: 8px;
+}
+
+.button {
+    width: 150px;
+    background-color: #fca223;
+    height: 150px;
+}
+
+.my-detail {
+    padding: 20px;
+    background: #222945;
+    color: white;
+}
+
+.text {
+    color: white;
+}
+
+.text-details {
+    text-align: right;
+    float: right;
+    color: white;
+    font-weight: 700;
+}
+
+.icon-button {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.signin {
+    margin-top: 100px;
+}
+
+.signinbutton {
+    padding: 20px;
+    background-color: #fca223;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+}
