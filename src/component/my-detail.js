@@ -10,7 +10,7 @@ import './styles.css'
 // import TronWeb from 'tronweb';
 import StarRatings from 'react-star-ratings';
 import { CONTRACTABI, CONTRACTADDRESS } from '../contract';
-// https://wa.me/?text=Hello%20there!%0AI%20am%20earning%2020%25%20on%20my%20investment%20every%20fortnight.%0AThats%20whopping%2040%25%20!%0A%0ACall%20%2F%20write%20me%20to%20know%20more%20!%0A%0AYou%20can%20still%20open%20your%20Tron%20%2C%20go%20to%20home%20page%20and%20refer%20to%20Referral%20section%20with%20my%20%0Aaddress%200x1234%20and%20register%20now!%20Its%20absolutely%20free!%0A
+// Hey!!!I am earning 20% income on my investment , every fortnight. That's whopping 40% per month.Want to know more? Call or write to me now!!!Better still you can open your TronLinkPro and under Dapp section copy and paste following link and register now, it's absolutly free to join.  https://rpnwinner.com?ref=0x29caee3e4996e5a506c4099dc181ccf298deb3be
 function MyDetail() {
     const [rewards,setrewards] = useState();
     const [fetch,setfetched] = useState(true);
@@ -76,7 +76,16 @@ function MyDetail() {
                             <td className='text'>Redeposit Time <span className='text-details'> {fetch? "---":  parseInt(rewards.start._hex)} </span></td>
                         </tr>
                         <tr>
-                            <td className='text'>My Referal <span className='text-details'></span></td>
+                            <td className='text'>My Referal <span onClick={()=>navigator.clipboard.writeText('https://rpnwinner.com?ref=0x29caee3e4996e5a506c4099dc181ccf298deb3be')} className='text-details cursor-pointer'>https://rpnwinner.com?ref=0x29caee3e4996e5a506c4099dc181ccf298deb3be</span></td>
+                        </tr>
+                        <tr className='flex flex-row justify-center'>
+
+                      <a className='cursor-pointer'  href ="https://wa.me/?text=Hello%20there!%0AI%20am%20earning%2020%25%20on%20my%20investment%20every%20fortnight.%0AThats%20whopping%2040%25%20!%0A%0ACall%20%2F%20write%20me%20to%20know%20more%20!%0A%0AYou%20can%20still%20open%20your%20Tron%20%2C%20go%20to%20home%20page%20and%20refer%20to%20Referral%20section%20with%20my%20%0Aaddress%200x1234%20and%20register%20now!%20Its%20absolutely%20free!%0A
+">  <i   className="fa fa-whatsapp" aria-hidden="true"></i></a> 
+  <a className='cursor-pointer'  href ="https://wa.me/?text=Hello%20there!%0AI%20am%20earning%2020%25%20on%20my%20investment%20every%20fortnight.%0AThats%20whopping%2040%25%20!%0A%0ACall%20%2F%20write%20me%20to%20know%20more%20!%0A%0AYou%20can%20still%20open%20your%20Tron%20%2C%20go%20to%20home%20page%20and%20refer%20to%20Referral%20section%20with%20my%20%0Aaddress%200x1234%20and%20register%20now!%20Its%20absolutely%20free!%0A
+">  <i   className="fa fa-instagram" aria-hidden="true"></i></a> 
+  <a className='cursor-pointer'  href ="https://wa.me/?text=Hello%20there!%0AI%20am%20earning%2020%25%20on%20my%20investment%20every%20fortnight.%0AThats%20whopping%2040%25%20!%0A%0ACall%20%2F%20write%20me%20to%20know%20more%20!%0A%0AYou%20can%20still%20open%20your%20Tron%20%2C%20go%20to%20home%20page%20and%20refer%20to%20Referral%20section%20with%20my%20%0Aaddress%200x1234%20and%20register%20now!%20Its%20absolutely%20free!%0A
+">  <i   className="fa fa-telegram" aria-hidden="true"></i></a> 
                         </tr>
                     </tbody>
                 </Table>

@@ -11,8 +11,10 @@ export const DepositDevelop = () => {
   const handleChange = (e) => {
     setamount(e.target.value);
   };
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     alert(validity);
+    await depositfund();
+    // await daytopuserrefferal()
   };
   const handleRecieverChange = (e) =>{
     setreciever(e.target.value);
