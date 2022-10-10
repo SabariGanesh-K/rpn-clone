@@ -7,6 +7,7 @@ import { DepositDevelop } from './Deposit/DepositDevelopment';
 import { Reservefund } from './Deposit/Reservefund';
 import { Withdraw } from './Deposit/Withdraw';
 import { Home } from './homje-page';
+import { TeamPerformance } from './Team Performance/team-performance';
 export const Main = () => {
     return (
      
@@ -21,6 +22,7 @@ export const Main = () => {
             <Route path="/DepositDev" element={<DepositDevelop />} />
             <Route path="/reservefund" element={<Reservefund />} />
             <Route path="/deposithistory" element={<DepositHistory />} />
+            <Route path = "/team" element = {<TeamPerformance/>}/>
             </Routes>
             </div>
   )

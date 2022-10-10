@@ -11,7 +11,7 @@ function Topsection() {
         <Container className="top-section-hero">
             <Row>
                 <Col><img src={Navicon} alt="" width="20%" /></Col>
-                <Col><p className="top-section-text">RPN | ENERGY</p></Col>
+                <Col><p className="top-section-text ">RPN | ENERGY</p></Col>
             </Row>
         </Container>
     );

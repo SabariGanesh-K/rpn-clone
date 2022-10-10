@@ -25,6 +25,8 @@ function ButtonSection() {
         const signer = provider.getSigner()
         const contract = new ethers.Contract(CONTRACTADDRESS, CONTRACTABI, signer)
         console.log("Contract=>", contract);
+        let ct = await contract.getDepositorsLength();
+        // alert(ct)
     }
 
     const deposit = async () => {

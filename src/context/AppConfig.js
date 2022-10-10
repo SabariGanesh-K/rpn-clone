@@ -26,29 +26,33 @@ export const AppProvider = ({ children }) => {
       const [topfund,settopfund] = useState("---");
       const [royaltyfund,setroyaltyfund] = useState("---");
       const [royalstarfund,setroyalstarfund] = useState("---")
+      // const [userinfo,setuserinfo] = useState([]);
+
     const [dtop,setdtop] = useState([]);
       useEffect(() => {
         const requestAccounts = async () => {
           await provider.send("eth_requestAccounts", []);
           // setloggedinstatus(true)
         }
-        const getData = async() =>{
-           let ct= await contract.getDepositorsLength();
-            setparticipants(ct)
-            let cd = await contract.getCurDay();
-            let dat = await contract.dayLuckUsers[cd];
-            setluckyusers(dat);
-            let dtop = await contract.dayTopUsers();
-            setdtop(dtop);
-            let sfund = await contract.starPool();
-            setstarfund(sfund);
-            let lfund=contract.luckPool();
-            setluckfund(lfund);
-            let tfund=await contract.topPool();
-            settopfund(tfund);
-        }
+        const Fetchfunction = async () => {
+          const web3Modal = new Web3Modal()
+          const connection = await web3Modal.connect()
+          const provider = new ethers.providers.Web3Provider(connection)
+          const signer = provider.getSigner()
+          const contract = new ethers.Contract(CONTRACTADDRESS, CONTRACTABI, signer)
+          // console.log("Contract=>", contract);
+          let part = await contract.getDepositorsLength();
+          
+          setparticipants((parseInt(part._hex)));
+          let luck = await contract.luckPool();
+          setluckfund((parseInt(luck._hex)));
+          let top = await contract.topPool();
+          settopfund((parseInt(top._hex)));
+          let star = await contract.starPool();
+          setstarfund((parseInt(star._hex)));
+      }
         requestAccounts().catch(console.error)
-        getData().catch(console.error)
+        Fetchfunction().catch(console.error)
       },[]);
     
       const signin = () => {

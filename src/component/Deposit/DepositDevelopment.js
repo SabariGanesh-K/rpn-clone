@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import { ethers } from 'ethers';
+import React, { useEffect, useState } from 'react'
+import Web3Modal from "web3modal"
+import { CONTRACTABI, CONTRACTADDRESS } from '../../contract';
 
 export const DepositDevelop = () => {
   const [amount, setamount] = useState(0);
   const [reciever,setreciever] = useState("");
-  const validity = amount % 50 == 0 && amount >= 50 && reciever ;
+  const validity = amount % 50 == 0 && amount >= 50  ;
+  // const addrValidity = reciever
   const handleChange = (e) => {
     setamount(e.target.value);
   };
@@ -13,6 +17,40 @@ export const DepositDevelop = () => {
   const handleRecieverChange = (e) =>{
     setreciever(e.target.value);
   }
+  const depositfund = async () => {
+    const web3Modal = new Web3Modal()
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const contract = new ethers.Contract(CONTRACTADDRESS, CONTRACTABI, signer)
+
+    const decimals = 18;
+    const input = "999"; // Note: this is a string, e.g. user input
+    const day = await contract.getCurDay();
+
+
+    const depositamount = ethers.utils.parseUnits("1", 'ether')
+    const transaction = await contract.dayLuckUsersDeposit(day, depositamount, {
+        gasLimit: 1000000,
+        gasPrice: ethers.utils.parseUnits('40', 'gwei')
+    })
+    await transaction.wait()
+
+    console.log("Contract=>", contract, "Transaction=>", transaction)
+}
+const daytopuserrefferal = async() =>{
+  const web3Modal = new Web3Modal()
+  const connection = await web3Modal.connect()
+  const provider = new ethers.providers.Web3Provider(connection)
+  const signer = provider.getSigner()
+  const contract = new ethers.Contract(CONTRACTADDRESS, CONTRACTABI, signer)
+  let tx = await contract.DayTopUser(reciever, {
+    gasLimit: 1000000,
+    gasPrice: ethers.utils.parseUnits('40', 'gwei')
+});
+await tx.wait();
+
+}
 
   return (
     <div className="bg-black text-white h-screen">
@@ -32,6 +70,7 @@ export const DepositDevelop = () => {
           <span className="text-white font-semibold text-3xl">USDT</span>
         </div>
       </div>
+      
       <div className="flex flex-row justify-center">
         {" "}
         {!validity && (
@@ -84,6 +123,14 @@ export const DepositDevelop = () => {
             onChange={(e) => handleRecieverChange(e)}
             placeholder="Amount in 50 multiples"
           ></input>
+      </div>
+      <div className="flex flex-row justify-center">
+        {" "}
+        {!reciever && (
+          <div className="text-red-700  font-semibold">
+            Enter a referral address
+          </div>
+        )}
       </div>
       <div className="flex flex-row justify-center mt-5">
         {validity && (

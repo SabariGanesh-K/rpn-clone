@@ -35,16 +35,16 @@
             <button  className = "buttons-selected " style = {{padding:'0rem',  color: 'goldenrod'}}   >  Deposit Details  </button>
             </NavLink>
   
-            <NavLink className = "nav-link" to = "/rpnplan">
+            <a className = "nav-link" href="https://rpnwinner.com/assets/images/RPN%20Plan.pdf"  target="__blank">
             <button  className =  "buttons-selected "  style = {{padding:'0rem',  color: 'goldenrod'}}  >RPN plan  </button>
-            </NavLink>
+            </a>
 
-            <NavLink className = "nav-link" to = "/wpaper">
+            <a className = "nav-link" href="https://rpnwinner.com/assets/images/RPN%20White%20Paper.pdf"  target="__blank">
             <button  className ="buttons-selected " style = {{padding:'0rem',  color: 'goldenrod'}}   >  White paper  </button>
-            </NavLink>
-            <NavLink className = "nav-link" to = "/auditrep">
+            </a>
+            <a className = "nav-link" href="https://rpnwinner.com/assets/images/RPN%20Audit%20Report.pdf"  target="__blank">
             <button  className ="buttons-selected " style = {{padding:'0rem',  color: 'goldenrod'}}   >  Audit Report  </button>
-            </NavLink>
+            </a>
         
           </div>
           </Navbar>

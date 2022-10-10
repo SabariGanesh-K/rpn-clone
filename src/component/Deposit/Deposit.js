@@ -1,17 +1,42 @@
+import { ethers } from "ethers";
 import React, { useState } from "react";
 
+import Web3Modal from "web3modal"
+import { CONTRACTABI, CONTRACTADDRESS } from "../../contract";
+import Header from "../Header/Header";
 export const Deposit = () => {
   const [amount, setamount] = useState(0);
   const validity = amount % 50 == 0 && amount>50 && amount<2000;
   const handleChange = (e) => {
     setamount(e.target.value);
   };
-  const handleSubmit = () => {
-    alert(validity);
+  const deposit = async () => {
+    const web3Modal = new Web3Modal()
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const contract = new ethers.Contract(CONTRACTADDRESS, CONTRACTABI, signer)
+    console.log("Contract=>", contract);
+
+    const depositamount = ethers.utils.parseUnits("1", 'ether')
+    const transaction = await contract.DayLuckyUser(amount*10^6, {
+        gasLimit: 1000000,
+        gasPrice: ethers.utils.parseUnits('40', 'gwei')
+    })
+    await transaction.wait()
+
+    console.log("Contract=>", contract, "Transaction=>", transaction)
+}
+  const handleSubmit = async() => {
+    if(validity){
+await deposit();
+    }
   };
+
 
   return (
     <div className="bg-black h-screen">
+      <Header/>
              <div className='mb-5 text-center text-white font-bold text-3xl'>DEPOSIT </div>
       <div className="flex flex-row justify-around bg-black">
         <div>

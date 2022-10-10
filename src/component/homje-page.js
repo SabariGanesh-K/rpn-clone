@@ -5,7 +5,10 @@ import ContractSection from './contract-section';
 import Header from './Header/Header';
 import MyDetail from './my-detail';
 import ParticipantSection from './participant-section';
+import { Referral } from './referral-section';
 import Topsection from './top-section';
+import { LuckyUsers } from './TopAndLuckyUsers/lucky-users';
+import { TopUsers } from './TopAndLuckyUsers/top-users';
 
 export const Home = () => {
     const {data,signin} = useContext(AppConfig);
@@ -33,6 +36,9 @@ export const Home = () => {
           <ParticipantSection />
           <ButtonSection />
           <MyDetail />
+          {/* <Referral/> */}
+          <TopUsers/>
+          <LuckyUsers/>
         </>
 
       // )}
